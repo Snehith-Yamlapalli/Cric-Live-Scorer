@@ -27,6 +27,10 @@ export default function History() {
   if (!userId) {
     return <div>Please sign in to view your match history.</div>;
   }
+  function home()
+    {
+      navigate('/Base');
+    }
 
   return (
     <div className="container my-4">
@@ -45,6 +49,7 @@ export default function History() {
           ))}
         </ul>
       )}
+        <button className="btn btn-primary" onClick={home}>Home</button>
     </div>
   );
 }
