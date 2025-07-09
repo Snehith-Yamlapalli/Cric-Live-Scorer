@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import firebase from './firebase';
 import { auth } from '../components/firebase';
+import { useNavigate } from 'react-router-dom';
 
 export default function History() {
   const [matches, setMatches] = useState([]); // will hold { id, name }[]
   const userId = auth.currentUser?.uid;
-
+   const navigate = useNavigate();
+  
   useEffect(() => {
     if (!userId) return;
 
